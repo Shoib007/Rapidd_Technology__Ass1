@@ -1,0 +1,139 @@
+.header{
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  width: 100vw;
+  height: 60px;
+  background-color: white;
+  align-items: center;
+  .side-menu{
+    display: none;
+  }
+}
+
+.logo{
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  font-size: 1.4rem;
+  // font-weight: 600;
+  cursor: pointer;
+}
+
+
+.menus{
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: rgba(0,0,0, 0.7);
+
+  // Each Menus in the menus
+  span{
+    transition: 0.2s ease-in-out;
+    &:hover{
+      color: black;
+    }
+    
+  }
+}
+
+
+.icons{
+  display: flex;
+  justify-content: space-between;
+  gap:20px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+
+#dropdown{
+  position: relative;
+
+
+  #dropdown-menus{
+    position: absolute;
+    right:0px;
+    transform: translateX(50%);
+    top: calc(100% + 1.1rem);
+    padding: 0.3rem 1rem 1rem 1rem;
+    background-color:rgba(255,255,255);
+    visibility: hidden;
+    opacity: 0;
+    cursor: default;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    padding: 1.3rem;
+    gap: 20px;
+    justify-content: space-around;
+    width:320px;
+
+    .category-menu, .feature-menu{
+
+      span{
+        font-size:1rem;
+        font-weight: 600;
+      }
+
+        ul{
+          line-height: 1.2rem;
+          font-size: 0.7rem;
+          list-style-type: none;
+          cursor: pointer;
+          color: rgba(0,0,0, 0.7);
+          li:hover{
+            color: black;
+          }
+        }
+    }
+  } 
+  #dropdown-menus.active{
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+}
+
+
+
+
+
+@media screen and (max-width:769px){
+  .icons{
+    font-size: 0.8rem;
+  }
+
+  .menus{
+    font-size: 0.7rem;
+  }
+
+  .logo{
+    font-size: 1rem;
+  }
+}
+
+
+@media screen and (max-width:480px){
+  .menus{
+    position: absolute;
+    top:60px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    border: 1px solid black;
+    background-color: white;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .side-menu{
+    display: block;
+  }
+
+  #dropdown-menus{
+    background-color: green;
+  }
+}
